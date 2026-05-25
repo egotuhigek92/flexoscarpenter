@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexo Carpenter Inc — Precision. Wood. Legacy.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0d0d0d;--off-black:#1a1a18;--charcoal:#2a2a26;--graphite:#3c3c38;
+  --steel:#5a5a54;--silver:#9a9a92;--fog:#d4d4cc;--white:#f8f8f4;
+  --amber:#d4840c;--amber-lt:#f0a832;--amber-pale:#f5d080;--amber-dim:#8a5408;
+  --wood:#a06228;--font-d:'Bebas Neue',sans-serif;--font-b:'Outfit',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--white);color:var(--black);overflow-x:hidden;}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9997;opacity:0.6;
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:var(--black);border-bottom:2px solid var(--amber);}
+.n-logo{display:flex;align-items:center;gap:10px;}
+.n-logo-mark{width:36px;height:36px;border:2px solid var(--amber);display:flex;align-items:center;justify-content:center;color:var(--amber);font-family:var(--font-d);font-size:18px;letter-spacing:1px;}
+.n-logo-text .n1{font-family:var(--font-d);font-size:22px;letter-spacing:3px;color:var(--white);display:block;line-height:1;}
+.n-logo-text .n2{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);font-weight:500;}
+.n-links{list-style:none;display:flex;gap:32px;align-items:center;}
+.n-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;color:rgba(248,248,244,0.6);text-decoration:none;transition:color .3s;position:relative;}
+.n-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--amber);transition:width .3s;}
+.n-links a:hover{color:var(--amber);}
+.n-links a:hover::after{width:100%;}
+.n-cta{background:var(--amber)!important;color:var(--black)!important;padding:9px 22px;font-weight:700!important;opacity:1!important;letter-spacing:1.5px!important;}
+.n-cta::after{display:none!important;}
+.n-cta:hover{background:var(--amber-lt)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);}
+
+/* PAGES */
+.pg{display:none;min-height:100vh;padding-top:68px;}
+.pg.active{display:block;}
+
+/* BUTTONS */
+.btn-amber{background:var(--amber);color:var(--black);padding:14px 34px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-family:var(--font-b);border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;}
+.btn-amber:hover{background:var(--amber-lt);transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,132,12,0.4);}
+.btn-wt{border:1px solid rgba(248,248,244,0.35);color:var(--white);padding:14px 34px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;font-family:var(--font-b);background:transparent;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;}
+.btn-wt:hover{border-color:var(--amber);color:var(--amber);}
+.btn-dark{background:var(--black);color:var(--amber);padding:16px 36px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-family:var(--font-b);border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;white-space:nowrap;}
+.btn-dark:hover{background:var(--off-black);transform:translateY(-2px);}
+
+/* ======= HOME ======= */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,13,13,0.92) 0%,rgba(13,13,13,0.65) 50%,rgba(13,13,13,0.1) 100%),url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1800&q=90') center/cover no-repeat;animation:hzoom 18s ease-in-out infinite alternate;}
+@keyframes hzoom{from{transform:scale(1);}to{transform:scale(1.06);}}
+.hero-stripe{position:absolute;top:0;right:0;width:4px;height:100%;background:var(--amber);}
+.hero-stripe::before{content:'';position:absolute;top:0;left:-60px;width:60px;height:100%;background:linear-gradient(to right,transparent,rgba(212,132,12,0.15));}
+.hero-content{position:relative;z-index:2;padding:0 52px 80px;animation:slideUp 1s ease forwards;}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.h-eyebrow{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:14px;}
+.h-eyebrow::before{content:'';display:block;width:40px;height:2px;background:var(--amber);}
+.h-title{font-family:var(--font-d);font-size:clamp(70px,11vw,160px);color:var(--white);line-height:0.88;letter-spacing:2px;margin-bottom:28px;}
+.h-title .a{color:var(--amber);}
+.h-desc{font-size:15px;line-height:1.8;color:rgba(248,248,244,0.65);font-weight:300;max-width:500px;margin-bottom:44px;}
+.h-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.h-stats{position:absolute;right:52px;bottom:80px;z-index:2;display:flex;flex-direction:column;gap:28px;animation:slideUp 1.2s ease .2s both;}
+.h-stat-num{font-family:var(--font-d);font-size:52px;color:var(--amber);line-height:1;display:block;}
+.h-stat-lbl{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(248,248,244,0.4);margin-top:2px;}
+
+/* Ticker */
+.ticker{background:var(--amber);padding:10px 0;overflow:hidden;border-bottom:2px solid var(--amber-dim);}
+.ticker-track{display:flex;animation:tick 20s linear infinite;width:max-content;}
+.ticker-item{padding:0 36px;font-family:var(--font-d);font-size:20px;letter-spacing:3px;color:var(--black);white-space:nowrap;display:flex;align-items:center;gap:20px;}
+.ticker-dot{font-size:10px;opacity:0.4;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* Intro */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;background:var(--off-black);}
+.ig-text{padding:90px 64px;display:flex;flex-direction:column;justify-content:center;}
+.ig-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.ig-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.ig-title{font-family:var(--font-d);font-size:clamp(38px,5vw,68px);color:var(--white);line-height:1;margin-bottom:22px;letter-spacing:1px;}
+.ig-title em{font-style:normal;color:var(--amber);}
+.ig-body{font-size:14px;line-height:1.9;color:var(--silver);font-weight:300;}
+.ig-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;}
+.ig-img{overflow:hidden;position:relative;min-height:200px;}
+.ig-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.ig-img:hover img{transform:scale(1.06);}
+.ig-img.span2{grid-row:span 2;}
+
+/* Craft bar */
+.craft-bar{background:var(--charcoal);padding:60px 52px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--amber);}
+.craft-block{padding:20px 36px;border-right:1px solid rgba(154,154,146,0.12);text-align:center;}
+.craft-block:last-child{border-right:none;}
+.craft-n{font-family:var(--font-d);font-size:64px;color:var(--amber);line-height:1;display:block;}
+.craft-l{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--silver);margin-top:4px;}
+
+/* Wood showcase */
+.wood-showcase{padding:80px 52px;background:var(--white);}
+.ws-head{margin-bottom:48px;}
+.ws-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.ws-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.ws-title{font-family:var(--font-d);font-size:clamp(40px,5.5vw,80px);line-height:0.95;letter-spacing:1px;color:var(--black);}
+.ws-title em{font-style:normal;color:var(--amber);}
+.ws-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 260px;gap:8px;}
+.wc{position:relative;overflow:hidden;cursor:pointer;}
+.wc img{width:100%;height:100%;object-fit:cover;transition:transform .55s,filter .4s;}
+.wc:hover img{transform:scale(1.06);filter:brightness(0.8);}
+.wc.tall{grid-row:span 2;}
+.wc-tag{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,13,13,0.9) 0%,transparent 100%);padding:28px 18px 14px;font-family:var(--font-d);font-size:20px;letter-spacing:1px;color:var(--white);transform:translateY(100%);transition:transform .35s;}
+.wc:hover .wc-tag{transform:translateY(0);}
+.wc-badge{position:absolute;top:12px;left:12px;background:var(--amber);color:var(--black);font-size:8px;letter-spacing:3px;text-transform:uppercase;font-weight:700;padding:5px 10px;}
+
+/* ======= SERVICES ======= */
+#services{background:var(--white);}
+.svc-banner{height:380px;position:relative;overflow:hidden;}
+.svc-banner img{width:100%;height:100%;object-fit:cover;filter:brightness(0.3) saturate(0.6);}
+.svc-banner-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 52px;}
+.svc-banner-text h1{font-family:var(--font-d);font-size:clamp(54px,9vw,120px);color:var(--white);line-height:0.9;letter-spacing:2px;margin-bottom:16px;}
+.svc-banner-text h1 span{color:var(--amber);}
+.svc-banner-text p{font-size:14px;color:rgba(248,248,244,0.65);max-width:500px;font-weight:300;line-height:1.7;}
+.svc-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.svc-panel{position:relative;height:420px;overflow:hidden;cursor:default;}
+.svc-panel img{width:100%;height:100%;object-fit:cover;filter:brightness(0.5) saturate(0.7);transition:transform .6s,filter .4s;}
+.svc-panel:hover img{transform:scale(1.07);filter:brightness(0.35) saturate(0.6);}
+.sp-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 26px;}
+.sp-n{font-family:var(--font-d);font-size:60px;color:rgba(212,132,12,0.2);line-height:1;margin-bottom:6px;transition:color .4s;}
+.svc-panel:hover .sp-n{color:rgba(212,132,12,0.45);}
+.sp-name{font-family:var(--font-d);font-size:26px;letter-spacing:1px;color:var(--white);margin-bottom:6px;}
+.sp-desc{font-size:12px;color:rgba(248,248,244,0.65);line-height:1.7;font-weight:300;max-height:0;overflow:hidden;transition:max-height .4s;}
+.svc-panel:hover .sp-desc{max-height:100px;}
+.sp-price{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-top:10px;}
+.svc-cards-wrap{padding:72px 52px;background:var(--off-black);}
+.svc-cards-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.svc-cards-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.svc-cards-title{font-family:var(--font-d);font-size:clamp(40px,5vw,72px);color:var(--white);letter-spacing:1px;line-height:0.95;margin-bottom:48px;}
+.svc-cards-title em{font-style:normal;color:var(--amber);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.sc{background:var(--charcoal);padding:38px 32px;border-left:3px solid transparent;transition:border-color .3s,transform .3s,background .3s;position:relative;overflow:hidden;}
+.sc::after{content:'';position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 36px 36px 0;border-color:transparent var(--amber) transparent transparent;opacity:0;transition:opacity .3s;}
+.sc:hover{border-left-color:var(--amber);transform:translateY(-4px);background:var(--graphite);}
+.sc:hover::after{opacity:1;}
+.sc-icon{width:40px;height:40px;color:var(--amber);margin-bottom:16px;}
+.sc-name{font-family:var(--font-d);font-size:24px;letter-spacing:1px;color:var(--white);margin-bottom:10px;}
+.sc-desc{font-size:13px;line-height:1.8;color:var(--silver);font-weight:300;}
+.sc-price{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-top:18px;padding-top:14px;border-top:1px solid var(--graphite);}
+.svc-cta{background:var(--amber);padding:60px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.svc-cta h3{font-family:var(--font-d);font-size:clamp(32px,4vw,56px);color:var(--black);line-height:1;letter-spacing:1px;}
+
+/* ======= GALLERY ======= */
+#gallery{background:var(--off-black);}
+.gal-head{padding:72px 52px 44px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;}
+.gal-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.gal-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.gal-title{font-family:var(--font-d);font-size:clamp(44px,7vw,100px);color:var(--white);line-height:0.9;letter-spacing:2px;}
+.gal-title em{font-style:normal;color:var(--amber);}
+.gal-filters{display:flex;gap:8px;flex-wrap:wrap;}
+.gf{padding:8px 18px;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--font-b);font-weight:600;border:1px solid rgba(154,154,146,0.25);background:transparent;color:rgba(248,248,244,0.5);cursor:pointer;transition:all .3s;}
+.gf.on,.gf:hover{background:var(--amber);color:var(--black);border-color:var(--amber);}
+.gal-masonry{padding:0 14px 60px;columns:4;column-gap:8px;background:var(--off-black);}
+.gi{break-inside:avoid;margin-bottom:8px;position:relative;overflow:hidden;cursor:pointer;}
+.gi img{width:100%;display:block;transition:transform .5s,filter .4s;filter:brightness(0.9) saturate(0.8);}
+.gi:hover img{transform:scale(1.05);filter:brightness(0.75) saturate(1);}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,0.9) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px 14px;}
+.gi:hover .gi-ov{opacity:1;}
+.gi-cap{font-family:var(--font-d);font-size:17px;letter-spacing:1px;color:var(--white);}
+.gi-cat{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:600;display:block;margin-bottom:3px;}
+.scroll-strip{overflow:hidden;background:var(--black);padding:12px 0;border-top:2px solid rgba(212,132,12,0.3);}
+.ss-track{display:flex;gap:8px;animation:ssroll 28s linear infinite;width:max-content;}
+.ss-track img{width:280px;height:175px;object-fit:cover;flex-shrink:0;opacity:0.65;transition:opacity .3s;filter:saturate(0.6);}
+.ss-track img:hover{opacity:1;filter:saturate(1);}
+@keyframes ssroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ======= ABOUT ======= */
+#about{background:var(--white);}
+.about-hero{height:520px;position:relative;overflow:hidden;}
+.about-hero img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.35) saturate(0.5);}
+.about-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(212,132,12,0.03) 60px,rgba(212,132,12,0.03) 61px);}
+.about-hero-txt{position:absolute;inset:0;display:flex;align-items:center;padding:0 52px;z-index:1;}
+.about-hero-txt h1{font-family:var(--font-d);font-size:clamp(60px,10vw,140px);color:var(--white);line-height:0.88;letter-spacing:2px;}
+.about-hero-txt h1 span{color:var(--amber);}
+.workshop-strip{display:grid;grid-template-columns:repeat(6,1fr);height:190px;gap:3px;background:var(--black);}
+.ws-cell{overflow:hidden;}
+.ws-cell img{width:100%;height:100%;object-fit:cover;transition:transform .4s,filter .4s;filter:grayscale(40%) brightness(0.85);}
+.ws-cell img:hover{transform:scale(1.08);filter:grayscale(0%) brightness(1);}
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.as-img{position:relative;overflow:hidden;min-height:560px;background:var(--off-black);}
+.as-img img{width:100%;height:100%;object-fit:cover;filter:saturate(0.8);}
+.as-img-accent{position:absolute;bottom:28px;right:28px;background:var(--amber);padding:24px 28px;border-left:4px solid var(--black);}
+.as-accent-n{font-family:var(--font-d);font-size:52px;color:var(--black);line-height:1;}
+.as-accent-l{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(13,13,13,0.7);font-weight:600;margin-top:2px;}
+.as-text{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:var(--white);}
+.about-vals{background:var(--black);padding:72px 52px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:3px solid var(--amber);}
+.av{padding-top:20px;border-top:1px solid rgba(212,132,12,0.25);}
+.av-icon{width:36px;height:36px;color:var(--amber);margin-bottom:12px;}
+.av-name{font-family:var(--font-d);font-size:22px;letter-spacing:1px;color:var(--white);margin-bottom:8px;}
+.av-desc{font-size:12px;line-height:1.8;color:var(--steel);font-weight:300;}
+.team-wrap{padding:80px 52px;background:var(--white);}
+.team-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.team-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.team-title{font-family:var(--font-d);font-size:clamp(40px,5vw,72px);color:var(--black);line-height:0.95;letter-spacing:1px;margin-bottom:48px;}
+.team-title em{font-style:normal;color:var(--amber);}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.tc{position:relative;overflow:hidden;}
+.tc-img{height:360px;overflow:hidden;position:relative;}
+.tc-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(25%);transition:transform .5s,filter .4s;}
+.tc:hover .tc-img img{transform:scale(1.04);filter:grayscale(0%);}
+.tc-amber-bar{height:4px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.tc:hover .tc-amber-bar{transform:scaleX(1);}
+.tc-info{padding:18px 0 0;}
+.tc-name{font-family:var(--font-d);font-size:26px;letter-spacing:1px;color:var(--black);}
+.tc-role{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-top:3px;}
+.tc-bio{font-size:12px;color:var(--steel);line-height:1.7;margin-top:8px;font-weight:300;}
+
+/* ======= REVIEWS ======= */
+#reviews{background:var(--off-black);}
+.rev-head{padding:80px 52px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;}
+.rev-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.rev-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.rev-htitle{font-family:var(--font-d);font-size:clamp(44px,7vw,96px);color:var(--white);line-height:0.9;letter-spacing:2px;}
+.rev-htitle em{font-style:normal;color:var(--amber);}
+.rev-body{font-size:14px;line-height:1.85;color:var(--silver);font-weight:300;margin-bottom:24px;}
+.rating-showcase{background:var(--charcoal);padding:50px 52px;display:flex;align-items:center;gap:70px;flex-wrap:wrap;border-top:3px solid var(--amber);border-bottom:1px solid rgba(154,154,146,0.1);}
+.rs-big{text-align:center;}
+.rs-num{font-family:var(--font-d);font-size:100px;color:var(--amber);line-height:1;}
+.rs-stars{font-size:20px;color:var(--amber);letter-spacing:4px;margin:4px 0;}
+.rs-lbl{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--steel);}
+.rs-div{width:1px;height:90px;background:rgba(154,154,146,0.12);}
+.rs-bars{min-width:260px;}
+.rs-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.rs-rl{font-size:11px;color:var(--steel);width:32px;text-align:right;}
+.rs-track{flex:1;height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;}
+.rs-fill{height:100%;background:var(--amber);border-radius:2px;}
+.rs-pct{font-size:10px;color:var(--steel);width:28px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--graphite);padding:2px;}
+.rc{background:var(--off-black);padding:40px 34px;border-bottom:3px solid transparent;transition:border-color .3s,transform .3s;position:relative;}
+.rc:hover{border-bottom-color:var(--amber);transform:translateY(-4px);}
+.rc-q{font-family:var(--font-d);font-size:64px;color:var(--amber);opacity:0.2;line-height:0.5;margin-bottom:14px;}
+.rc-text{font-size:15px;line-height:1.8;color:rgba(248,248,244,0.85);font-weight:300;margin-bottom:22px;font-style:italic;}
+.rc-stars{color:var(--amber);font-size:12px;letter-spacing:2px;margin-bottom:12px;}
+.rc-author{display:flex;gap:12px;align-items:center;}
+.rc-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);}
+.rc-name{font-size:13px;font-weight:600;color:var(--white);}
+.rc-loc{font-size:11px;color:var(--steel);}
+.rc-proj{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-top:3px;}
+.ba-section{background:var(--black);padding:72px 52px;text-align:center;}
+.ba-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.ba-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.ba-title{font-family:var(--font-d);font-size:clamp(44px,6vw,84px);color:var(--white);letter-spacing:2px;line-height:0.9;margin-bottom:12px;}
+.ba-title em{font-style:normal;color:var(--amber);}
+.ba-sub{font-size:14px;color:var(--steel);margin-bottom:48px;font-weight:300;}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.ba-card{position:relative;overflow:hidden;cursor:pointer;}
+.ba-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .55s,filter .4s;filter:saturate(0.7);}
+.ba-card:hover img{transform:scale(1.05);filter:saturate(1.1);}
+.ba-tag{position:absolute;top:12px;left:12px;background:var(--amber);color:var(--black);font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:5px 10px;font-family:var(--font-b);}
+.ba-info{position:absolute;bottom:0;left:0;right:0;background:rgba(13,13,13,0.88);padding:12px 14px;transform:translateY(100%);transition:transform .35s;}
+.ba-card:hover .ba-info{transform:translateY(0);}
+.ba-info-name{font-family:var(--font-d);font-size:18px;letter-spacing:1px;color:var(--white);margin-bottom:2px;}
+.ba-info-desc{font-size:11px;color:var(--silver);font-weight:300;}
+
+/* ======= CONTACT ======= */
+#contact{background:var(--white);}
+.contact-hero{height:300px;position:relative;overflow:hidden;}
+.contact-hero img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(0.3) saturate(0.5);}
+.contact-hero-txt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;}
+.contact-hero-txt h1{font-family:var(--font-d);font-size:clamp(48px,8vw,100px);color:var(--white);line-height:0.9;letter-spacing:2px;margin-bottom:12px;}
+.contact-hero-txt h1 span{color:var(--amber);}
+.contact-hero-txt p{font-size:14px;color:rgba(248,248,244,0.65);font-weight:300;}
+.contact-split{display:grid;grid-template-columns:1fr 1.3fr;min-height:640px;}
+.contact-info{background:var(--off-black);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.contact-info::before{content:'FLEXO';position:absolute;font-family:var(--font-d);font-size:180px;letter-spacing:4px;color:rgba(212,132,12,0.04);bottom:-20px;left:-10px;line-height:1;pointer-events:none;z-index:0;white-space:nowrap;}
+.ci-label{font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;position:relative;z-index:1;}
+.ci-label::before{content:'';display:block;width:24px;height:2px;background:var(--amber);}
+.ci-title{font-family:var(--font-d);font-size:clamp(38px,4.5vw,60px);color:var(--white);letter-spacing:1px;line-height:0.95;margin-bottom:18px;position:relative;z-index:1;}
+.ci-title em{font-style:normal;color:var(--amber);}
+.ci-body{font-size:13px;color:var(--silver);line-height:1.8;font-weight:300;margin-bottom:38px;position:relative;z-index:1;}
+.ci-items{display:flex;flex-direction:column;gap:22px;position:relative;z-index:1;}
+.ci-item{display:flex;gap:14px;align-items:flex-start;}
+.ci-icon{width:38px;height:38px;border:1px solid rgba(212,132,12,0.3);display:flex;align-items:center;justify-content:center;color:var(--amber);flex-shrink:0;}
+.ci-lbl{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:3px;}
+.ci-val{font-size:13px;color:var(--fog);line-height:1.6;font-weight:300;}
+.ci-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:32px;position:relative;z-index:1;}
+.ci-imgs img{width:100%;height:76px;object-fit:cover;opacity:0.55;filter:saturate(0.6);transition:opacity .3s,filter .3s,transform .3s;}
+.ci-imgs img:hover{opacity:1;filter:saturate(1.1);transform:scale(1.04);}
+.contact-form{background:var(--white);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;}
+.cf-title{font-family:var(--font-d);font-size:clamp(30px,3.5vw,48px);letter-spacing:1px;color:var(--black);margin-bottom:6px;}
+.cf-sub{font-size:13px;color:var(--steel);line-height:1.7;margin-bottom:32px;font-weight:300;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.f-grp{margin-bottom:20px;}
+.f-lbl{display:block;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:8px;}
+.f-in,.f-sel,.f-ta{width:100%;padding:11px 0;border:none;border-bottom:1px solid var(--fog);background:transparent;font-family:var(--font-b);font-size:14px;color:var(--black);font-weight:300;outline:none;transition:border-color .3s;}
+.f-in:focus,.f-sel:focus,.f-ta:focus{border-bottom-color:var(--amber);}
+.f-ta{resize:none;height:88px;}
+.f-sel option{background:var(--white);}
+.sub-btn{background:var(--black);color:var(--amber);padding:16px 44px;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-family:var(--font-b);border:none;cursor:pointer;margin-top:6px;position:relative;overflow:hidden;transition:all .3s;}
+.sub-btn::after{content:'';position:absolute;inset:0;background:var(--amber);transform:translateX(-100%);transition:transform .4s ease;z-index:0;}
+.sub-btn span{position:relative;z-index:1;}
+.sub-btn:hover::after{transform:translateX(0);}
+.sub-btn:hover{color:var(--black);}
+
+/* FOOTER */
+footer{background:var(--black);padding:64px 52px 32px;border-top:3px solid var(--amber);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(154,154,146,0.1);margin-bottom:28px;}
+.fb-logo .name{font-family:var(--font-d);font-size:28px;letter-spacing:3px;color:var(--white);}
+.fb-logo .tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:14px;}
+.fb-logo p{font-size:12px;color:var(--steel);line-height:1.8;font-weight:300;margin-bottom:18px;}
+.ft-socials{display:flex;gap:8px;}
+.ft-soc{width:34px;height:34px;border:1px solid rgba(212,132,12,0.2);display:flex;align-items:center;justify-content:center;color:var(--steel);font-size:11px;cursor:pointer;transition:all .3s;text-decoration:none;font-family:var(--font-b);font-weight:600;}
+.ft-soc:hover{border-color:var(--amber);color:var(--amber);}
+.ft-col h4{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:16px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.ft-col ul li a{font-size:12px;color:var(--steel);text-decoration:none;font-weight:300;transition:color .3s;cursor:pointer;}
+.ft-col ul li a:hover{color:var(--amber);}
+.footer-btm{display:flex;justify-content:space-between;align-items:center;}
+.ft-copy{font-size:11px;color:var(--steel);font-weight:300;}
+
+/* TOAST */
+.toast{position:fixed;bottom:32px;right:32px;background:var(--black);color:var(--white);padding:14px 22px;font-size:13px;border-left:3px solid var(--amber);z-index:9999;transform:translateY(100px);opacity:0;transition:all .4s ease;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(13,13,13,0.97);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:14px;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;}
+.lb-x{position:absolute;top:22px;right:34px;font-family:var(--font-d);font-size:38px;color:var(--white);cursor:pointer;opacity:0.7;transition:opacity .3s;}
+.lb-x:hover{opacity:1;}
+.lb-nav{display:flex;gap:14px;}
+.lb-btn{background:rgba(212,132,12,0.12);border:1px solid rgba(212,132,12,0.3);color:var(--amber);padding:8px 20px;font-size:10px;letter-spacing:2px;cursor:pointer;font-family:var(--font-b);font-weight:600;transition:all .3s;}
+.lb-btn:hover{background:var(--amber);color:var(--black);}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  nav{padding:0 28px;}
+  .h-stats{right:28px;bottom:60px;}
+  .intro-grid{grid-template-columns:1fr;}
+  .craft-bar{grid-template-columns:repeat(2,1fr);padding:50px 36px;}
+  .wood-showcase{padding:60px 28px;}
+  .ws-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .wc.tall{grid-row:span 1;}
+  .svc-panels{grid-template-columns:repeat(2,1fr);}
+  .svc-cards-wrap{padding:60px 28px;}
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .gal-head{grid-template-columns:1fr;gap:20px;padding:60px 28px 36px;}
+  .gal-masonry{columns:3;}
+  .about-story{grid-template-columns:1fr;}
+  .about-vals{grid-template-columns:repeat(2,1fr);padding:60px 36px;}
+  .team-wrap{padding:60px 36px;}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .rev-head{grid-template-columns:1fr;gap:24px;padding:60px 28px 40px;}
+  .rev-grid{grid-template-columns:repeat(2,1fr);}
+  .ba-grid{grid-template-columns:repeat(2,1fr);}
+  .contact-split{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:repeat(2,1fr);}
+  .workshop-strip{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:768px){
+  nav{padding:0 18px;}
+  .n-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-content{padding:0 22px 70px;}
+  .h-stats{display:none;}
+  .craft-bar{grid-template-columns:1fr;padding:36px 22px;}
+  .svc-panels{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .svc-cta{flex-direction:column;padding:44px 22px;}
+  .gal-masonry{columns:2;padding:0 8px 40px;}
+  .about-vals{grid-template-columns:1fr;padding:50px 22px;}
+  .team-grid{grid-template-columns:1fr;}
+  .team-wrap,.svc-cards-wrap{padding:50px 22px;}
+  .rev-grid{grid-template-columns:1fr;gap:0;padding:0;}
+  .ba-grid{grid-template-columns:1fr;}
+  .ba-section,.rating-showcase{padding:50px 22px;}
+  .contact-info,.contact-form{padding:60px 22px;}
+  .footer-top{grid-template-columns:1fr;}
+  footer{padding:50px 22px 28px;}
+  .about-hero-txt{padding:0 22px;}
+  .workshop-strip{grid-template-columns:repeat(3,1fr);height:160px;}
+  .intro-grid .ig-text{padding:60px 22px;}
+  .svc-banner-text{padding:0 22px;}
+  .as-text{padding:60px 22px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="n-logo">
+    <div class="n-logo-mark">FX</div>
+    <div class="n-logo-text">
+      <span class="n1">FLEXO</span>
+      <span class="n2">Carpenter Inc</span>
+    </div>
+  </div>
+  <ul class="n-links">
+    <li><a href="#" onclick="goTo('home')">Home</a></li>
+    <li><a href="#" onclick="goTo('services')">Services</a></li>
+    <li><a href="#" onclick="goTo('gallery')">Our Work</a></li>
+    <li><a href="#" onclick="goTo('about')">About Us</a></li>
+    <li><a href="#" onclick="goTo('reviews')">Reviews</a></li>
+    <li><a href="#" onclick="goTo('contact')" class="n-cta">Free Quote</a></li>
+  </ul>
+  <div class="hamburger" onclick="navToggle()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- =================== HOME =================== -->
+<section id="home" class="pg active">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+      <div class="h-eyebrow">Precision Woodcraft Since 2001</div>
+      <h1 class="h-title">BUILT<br>BY <span class="a">HAND.</span><br>BUILT TO<br>LAST.</h1>
+      <p class="h-desc">Flexo Carpenter Inc delivers masterclass woodworking — from custom furniture and cabinetry to structural carpentry and fine joinery. Every cut precise. Every joint perfect. Every piece a legacy.</p>
+      <div class="h-btns">
+        <a href="#" class="btn-amber" onclick="goTo('gallery')">See Our Work</a>
+        <a href="#" class="btn-wt" onclick="goTo('contact')">Get a Free Quote</a>
+      </div>
+    </div>
+    <div class="h-stats">
+      <div><span class="h-stat-num">23+</span><div class="h-stat-lbl">Years Active</div></div>
+      <div><span class="h-stat-num">1,400+</span><div class="h-stat-lbl">Projects Built</div></div>
+      <div><span class="h-stat-num">4.9★</span><div class="h-stat-lbl">Client Rating</div></div>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">CUSTOM FURNITURE <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">CABINET MAKING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">HARDWOOD FLOORING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">STAIRCASE DESIGN <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">STRUCTURAL FRAMING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">RESTORATION <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">OUTDOOR DECKING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">FINE JOINERY <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">CUSTOM FURNITURE <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">CABINET MAKING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">HARDWOOD FLOORING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">STAIRCASE DESIGN <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">STRUCTURAL FRAMING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">RESTORATION <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">OUTDOOR DECKING <span class="ticker-dot">◆</span></div>
+      <div class="ticker-item">FINE JOINERY <span class="ticker-dot">◆</span></div>
+    </div>
+  </div>
+
+  <div class="intro-grid">
+    <div class="ig-text">
+      <div class="ig-label">Who We Are</div>
+      <h2 class="ig-title">Where <em>WOOD</em><br>MEETS MASTERY</h2>
+      <p class="ig-body">Founded in 2001 by master carpenter Felix Okafor, Flexo Carpenter Inc has grown from a one-man bench to a 16-person workshop delivering some of the most technically demanding woodwork in the region. Every piece planned, cut, joined and finished with 23 years of accumulated knowledge.</p>
+      <br>
+      <a href="#" class="btn-amber" style="margin-top:22px" onclick="goTo('about')">Our Story</a>
+    </div>
+    <div class="ig-images">
+      <div class="ig-img span2">
+        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=700&q=85" alt="Woodworking">
+      </div>
+      <div class="ig-img">
+        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=500&q=85" alt="Craftsman">
+      </div>
+      <div class="ig-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85" alt="Workshop">
+      </div>
+    </div>
+  </div>
+
+  <div class="craft-bar">
+    <div class="craft-block"><span class="craft-n">23+</span><div class="craft-l">Years of Craft</div></div>
+    <div class="craft-block"><span class="craft-n">1,400+</span><div class="craft-l">Projects Delivered</div></div>
+    <div class="craft-block"><span class="craft-n">16</span><div class="craft-l">Expert Craftsmen</div></div>
+    <div class="craft-block"><span class="craft-n">100%</span><div class="craft-l">Client Satisfaction</div></div>
+  </div>
+
+  <div class="wood-showcase">
+    <div class="ws-head">
+      <div class="ws-label">From Our Workshop</div>
+      <h2 class="ws-title">RECENT <em>WOODWORK</em> PROJECTS</h2>
+    </div>
+    <div class="ws-grid">
+      <div class="wc tall" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=900&q=85" alt="Table">
+        <div class="wc-badge">Featured</div>
+        <div class="wc-tag">Custom Walnut Dining Table</div>
+      </div>
+      <div class="wc" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=85" alt="Kitchen">
+        <div class="wc-tag">Oak Kitchen Cabinetry</div>
+      </div>
+      <div class="wc" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=500&q=85" alt="Flooring">
+        <div class="wc-tag">Herringbone Hardwood Floor</div>
+      </div>
+      <div class="wc" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=500&q=85" alt="Shelves">
+        <div class="wc-tag">Floor-to-Ceiling Library</div>
+      </div>
+      <div class="wc" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=500&q=85" alt="Door">
+        <div class="wc-tag">Hand-Carved Timber Door</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section id="services" class="pg">
+
+  <div class="svc-banner">
+    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1800&q=85" alt="Workshop">
+    <div class="svc-banner-text">
+      <h1>OUR<br><span>SERVICES</span></h1>
+      <p>Every service delivered with the same uncompromising standard — whether it's a single cabinet or a full structural build.</p>
+    </div>
+  </div>
+
+  <div class="svc-panels">
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=700&q=85" alt="Cabinetry">
+      <div class="sp-body">
+        <div class="sp-n">01</div>
+        <div class="sp-name">CUSTOM CABINETRY</div>
+        <div class="sp-desc">Kitchen, bathroom and living room cabinetry built to exact spec. Solid wood joinery, dovetail drawers, hand-finishing throughout.</div>
+        <div class="sp-price">From $1,800 / unit</div>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=700&q=85" alt="Furniture">
+      <div class="sp-body">
+        <div class="sp-n">02</div>
+        <div class="sp-name">BESPOKE FURNITURE</div>
+        <div class="sp-desc">Dining tables, beds, desks and wardrobes designed and built to your exact specifications in any timber species and finish.</div>
+        <div class="sp-price">From $900 / piece</div>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=700&q=85" alt="Flooring">
+      <div class="sp-body">
+        <div class="sp-n">03</div>
+        <div class="sp-name">HARDWOOD FLOORING</div>
+        <div class="sp-desc">Supply and installation of solid hardwood, engineered, parquet and herringbone flooring. Sanding and refinishing available.</div>
+        <div class="sp-price">From $14 / sq ft</div>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=85" alt="Decking">
+      <div class="sp-body">
+        <div class="sp-n">04</div>
+        <div class="sp-name">DECKING & OUTDOOR</div>
+        <div class="sp-desc">Treated timber decks, pergolas, fences and garden structures built with weather-resistant hardwoods for lasting outdoor performance.</div>
+        <div class="sp-price">From $28 / sq ft</div>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=700&q=85" alt="Stairs">
+      <div class="sp-body">
+        <div class="sp-n">05</div>
+        <div class="sp-name">STAIRS & JOINERY</div>
+        <div class="sp-desc">Staircase construction and refurbishment, balustrades, newel posts, skirting, architraves — all internal joinery finished to showroom standard.</div>
+        <div class="sp-price">From $4,500 / staircase</div>
+      </div>
+    </div>
+    <div class="svc-panel">
+      <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=700&q=85" alt="Restoration">
+      <div class="sp-body">
+        <div class="sp-n">06</div>
+        <div class="sp-name">RESTORATION</div>
+        <div class="sp-desc">Antique furniture restoration, heritage joinery matching, floor restoration and repair. Preserving the character of original craftsmanship.</div>
+        <div class="sp-price">From $160 / hour</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-cards-wrap">
+    <div class="svc-cards-label">Full Service Range</div>
+    <h2 class="svc-cards-title">EVERYTHING<br>WE <em>BUILD</em></h2>
+    <div class="svc-grid">
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="16" width="36" height="24" rx="2"/><path d="M6 24h36M16 16V12a8 8 0 0116 0v4"/>
+        </svg>
+        <div class="sc-name">KITCHEN FITOUTS</div>
+        <p class="sc-desc">Full kitchen transformations with custom cabinetry, islands, pantry units. Oak, maple, walnut, MDF or painted finishes available.</p>
+        <div class="sc-price">From $4,000 full kitchen</div>
+      </div>
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="8" y="6" width="32" height="36" rx="2"/><line x1="8" y1="22" x2="40" y2="22"/><line x1="24" y1="6" x2="24" y2="42"/>
+        </svg>
+        <div class="sc-name">BUILT-IN WARDROBES</div>
+        <p class="sc-desc">Floor-to-ceiling storage with custom internal fittings — hanging rails, drawers, shoe racks and shelving. Sliding or hinged doors.</p>
+        <div class="sc-price">From $1,400 per unit</div>
+      </div>
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="28" width="40" height="12" rx="2"/><rect x="10" y="8" width="28" height="20" rx="2"/><line x1="12" y1="28" x2="12" y2="40"/><line x1="36" y1="28" x2="36" y2="40"/>
+        </svg>
+        <div class="sc-name">DINING TABLES</div>
+        <p class="sc-desc">Solid hardwood dining tables in any size. Live-edge slabs, jointed tops, trestle and pedestal bases — all made to order in our workshop.</p>
+        <div class="sc-price">From $1,600 per table</div>
+      </div>
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 44V8L24 4l20 4v36H4z"/><rect x="18" y="28" width="12" height="16"/><line x1="10" y1="14" x2="10" y2="26"/><line x1="38" y1="14" x2="38" y2="26"/>
+        </svg>
+        <div class="sc-name">DOORS & FRAMES</div>
+        <p class="sc-desc">Solid timber interior and exterior doors, architraves and frames. Custom panel configurations and heritage-matching available.</p>
+        <div class="sc-price">From $700 per door</div>
+      </div>
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 36V20M24 36V12M36 36V24"/><rect x="6" y="36" width="36" height="4" rx="1"/>
+        </svg>
+        <div class="sc-name">BED FRAMES</div>
+        <p class="sc-desc">Platform, sleigh and four-poster bed frames in solid timber. All sizes including custom. Headboards with carved or routed panel designs.</p>
+        <div class="sc-price">From $1,000 per frame</div>
+      </div>
+      <div class="sc">
+        <svg class="sc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 40L6 14L24 8L42 14L42 40"/><path d="M6 14L24 20L42 14"/><line x1="24" y1="8" x2="24" y2="40"/>
+        </svg>
+        <div class="sc-name">STRUCTURAL FRAMING</div>
+        <p class="sc-desc">Timber frame construction, roof trusses, sub-floor systems and wall framing. Commercial and residential structural carpentry to code.</p>
+        <div class="sc-price">Custom quote</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-cta">
+    <h3>READY TO START<br>YOUR PROJECT?</h3>
+    <a href="#" class="btn-dark" onclick="goTo('contact')">GET A FREE QUOTE →</a>
+  </div>
+
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section id="gallery" class="pg">
+
+  <div class="gal-head">
+    <div>
+      <div class="gal-label">Portfolio</div>
+      <h2 class="gal-title">THE WORK<br>OF OUR <em>HANDS</em></h2>
+      <p style="font-size:14px;color:var(--silver);font-weight:300;line-height:1.7;margin-top:14px;max-width:500px;">Over 1,400 projects — from single custom pieces to complete structural builds. Filter by category.</p>
+    </div>
+    <div class="gal-filters">
+      <button class="gf on" onclick="filtGal(this,'all')">All Work</button>
+      <button class="gf" onclick="filtGal(this,'furniture')">Furniture</button>
+      <button class="gf" onclick="filtGal(this,'cabinetry')">Cabinetry</button>
+      <button class="gf" onclick="filtGal(this,'flooring')">Flooring</button>
+      <button class="gf" onclick="filtGal(this,'doors')">Doors & Stairs</button>
+      <button class="gf" onclick="filtGal(this,'outdoor')">Outdoor</button>
+      <button class="gf" onclick="filtGal(this,'workshop')">Workshop</button>
+    </div>
+  </div>
+
+  <div class="gal-masonry" id="galGrid">
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=85" alt="Table"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">Custom Walnut Dining Table</div></div></div></div>
+    <div class="gi" data-cat="cabinetry" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=85" alt="Kitchen"><div class="gi-ov"><div><span class="gi-cat">Cabinetry</span><div class="gi-cap">White Oak Kitchen Fitout</div></div></div></div>
+    <div class="gi" data-cat="workshop" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=85" alt="Craftsman"><div class="gi-ov"><div><span class="gi-cat">Workshop</span><div class="gi-cap">Master at the Bench</div></div></div></div>
+    <div class="gi" data-cat="flooring" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=600&q=85" alt="Floor"><div class="gi-ov"><div><span class="gi-cat">Flooring</span><div class="gi-cap">Herringbone Oak Flooring</div></div></div></div>
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=85" alt="Coffee"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">Live Edge Coffee Table</div></div></div></div>
+    <div class="gi" data-cat="workshop" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=600&q=85" alt="Lathe"><div class="gi-ov"><div><span class="gi-cat">Workshop</span><div class="gi-cap">Wood Turning — Detail</div></div></div></div>
+    <div class="gi" data-cat="cabinetry" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=85" alt="Kitchen2"><div class="gi-ov"><div><span class="gi-cat">Cabinetry</span><div class="gi-cap">Shaker-Style Kitchen</div></div></div></div>
+    <div class="gi" data-cat="outdoor" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=85" alt="Deck"><div class="gi-ov"><div><span class="gi-cat">Outdoor</span><div class="gi-cap">Spotted Gum Timber Deck</div></div></div></div>
+    <div class="gi" data-cat="doors" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=600&q=85" alt="Door"><div class="gi-ov"><div><span class="gi-cat">Doors</span><div class="gi-cap">Hand-Carved Timber Door</div></div></div></div>
+    <div class="gi" data-cat="workshop" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=85" alt="Workshop"><div class="gi-ov"><div><span class="gi-cat">Workshop</span><div class="gi-cap">Flexo Workshop Floor</div></div></div></div>
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=85" alt="Bookcase"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">Floor-to-Ceiling Bookcase</div></div></div></div>
+    <div class="gi" data-cat="flooring" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=85" alt="Floor2"><div class="gi-ov"><div><span class="gi-cat">Flooring</span><div class="gi-cap">Teak Bathroom Floor</div></div></div></div>
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=85" alt="Bed"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">King Sleigh Bed — Blackwood</div></div></div></div>
+    <div class="gi" data-cat="outdoor" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&q=85" alt="Pergola"><div class="gi-ov"><div><span class="gi-cat">Outdoor</span><div class="gi-cap">Cedar Pergola & Bench</div></div></div></div>
+    <div class="gi" data-cat="cabinetry" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=85" alt="Kitchen3"><div class="gi-ov"><div><span class="gi-cat">Cabinetry</span><div class="gi-cap">Marble & Timber Island</div></div></div></div>
+    <div class="gi" data-cat="workshop" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85" alt="Saw"><div class="gi-ov"><div><span class="gi-cat">Workshop</span><div class="gi-cap">Table Saw — Precision Cut</div></div></div></div>
+    <div class="gi" data-cat="doors" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=85" alt="Stairs"><div class="gi-ov"><div><span class="gi-cat">Stairs</span><div class="gi-cap">Open-Riser Timber Staircase</div></div></div></div>
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=85" alt="Shelves"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">Floating Timber Shelves</div></div></div></div>
+    <div class="gi" data-cat="flooring" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=85" alt="Floor3"><div class="gi-ov"><div><span class="gi-cat">Flooring</span><div class="gi-cap">Wide Plank Engineered Oak</div></div></div></div>
+    <div class="gi" data-cat="cabinetry" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=85" alt="Media"><div class="gi-ov"><div><span class="gi-cat">Cabinetry</span><div class="gi-cap">Built-in Media Cabinet</div></div></div></div>
+    <div class="gi" data-cat="outdoor" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=85" alt="Garden"><div class="gi-ov"><div><span class="gi-cat">Outdoor</span><div class="gi-cap">Timber Garden Furniture</div></div></div></div>
+    <div class="gi" data-cat="furniture" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=85" alt="Bedside"><div class="gi-ov"><div><span class="gi-cat">Furniture</span><div class="gi-cap">Bedside Tables — Pair</div></div></div></div>
+    <div class="gi" data-cat="doors" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=85" alt="Office"><div class="gi-ov"><div><span class="gi-cat">Joinery</span><div class="gi-cap">Solid Oak Office Fitout</div></div></div></div>
+    <div class="gi" data-cat="workshop" onclick="openLB(this)"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=85" alt="Timber"><div class="gi-ov"><div><span class="gi-cat">Workshop</span><div class="gi-cap">Timber Selection — Showroom</div></div></div></div>
+  </div>
+
+  <div class="scroll-strip">
+    <div class="ss-track">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=200&fit=crop&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=400&h=200&fit=crop&q=80" alt="">
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about" class="pg">
+
+  <div class="about-hero">
+    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1800&q=85" alt="Workshop">
+    <div class="about-hero-txt">
+      <h1>ABOUT<br><span>FLEXO</span></h1>
+    </div>
+  </div>
+
+  <div class="workshop-strip">
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt=""></div>
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&q=80" alt=""></div>
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80" alt=""></div>
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" alt=""></div>
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&q=80" alt=""></div>
+    <div class="ws-cell"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&q=80" alt=""></div>
+  </div>
+
+  <div class="about-story">
+    <div class="as-img">
+      <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=900&q=85" alt="Felix Okafor">
+      <div class="as-img-accent">
+        <div class="as-accent-n">23+</div>
+        <div class="as-accent-l">Years of Craft</div>
+      </div>
+    </div>
+    <div class="as-text">
+      <div style="font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px;">
+        <span style="display:block;width:24px;height:2px;background:var(--amber)"></span>Our Story
+      </div>
+      <h2 style="font-family:var(--font-d);font-size:clamp(38px,5vw,66px);color:var(--black);letter-spacing:1px;line-height:0.95;margin-bottom:22px;">23 YEARS.<br>ONE <span style="color:var(--amber);">STANDARD.</span></h2>
+      <p style="font-size:14px;line-height:1.9;color:var(--steel);font-weight:300;">Flexo Carpenter Inc was founded in 2001 by Felix Okafor — a fourth-generation carpenter who trained in his grandfather's workshop before moving to the United States with tools, knowledge, and an absolute refusal to compromise on quality.</p>
+      <br>
+      <p style="font-size:14px;line-height:1.9;color:var(--steel);font-weight:300;">Starting from a rented garage in Philadelphia with one workbench and a set of hand tools, Felix built the business piece by piece — exactly as he builds furniture. Today, Flexo operates from a purpose-built 7,200 sq ft workshop with 16 specialist carpenters, joiners and finishers.</p>
+      <br>
+      <p style="font-size:14px;line-height:1.9;color:var(--steel);font-weight:300;">Over 1,400 projects later, our standard hasn't changed. Every piece is planned precisely, cut cleanly, joined properly and finished with pride. The work speaks for itself — and it always will.</p>
+      <br>
+      <a href="#" class="btn-amber" style="margin-top:20px" onclick="goTo('contact')">Work With Us</a>
+    </div>
+  </div>
+
+  <div class="about-vals">
+    <div class="av">
+      <svg class="av-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M24 4L28 16H40L30 24L34 36L24 28L14 36L18 24L8 16H20Z" fill="rgba(212,132,12,0.15)"/>
+      </svg>
+      <div class="av-name">ZERO COMPROMISE</div>
+      <p class="av-desc">Every joint, every surface, every finish meets the same exacting standard. We don't cut corners — ever. Not even on the pieces no one sees.</p>
+    </div>
+    <div class="av">
+      <svg class="av-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="24" cy="24" r="16"/><path d="M24 14v10l8 5"/>
+      </svg>
+      <div class="av-name">ON-TIME ALWAYS</div>
+      <p class="av-desc">We quote realistic timelines and keep them. In 23 years we have completed every project on or before the agreed delivery date.</p>
+    </div>
+    <div class="av">
+      <svg class="av-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 24L20 32L36 16"/><circle cx="24" cy="24" r="16"/>
+      </svg>
+      <div class="av-name">10-YEAR GUARANTEE</div>
+      <p class="av-desc">All structural work is backed by a full 10-year guarantee. If anything fails in structure or finish, we fix it — no charge, no questions asked.</p>
+    </div>
+    <div class="av">
+      <svg class="av-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M24 6C24 6 8 16 8 28a16 16 0 0032 0C40 16 24 6 24 6z"/><path d="M24 18v12M18 24h12"/>
+      </svg>
+      <div class="av-name">SUSTAINABLY SOURCED</div>
+      <p class="av-desc">All timber is sourced from certified sustainable forests. Good craft and good stewardship of the planet are inseparable to us.</p>
+    </div>
+  </div>
+
+  <div class="team-wrap">
+    <div class="team-label">Our Craftsmen</div>
+    <h2 class="team-title">THE HANDS<br>BEHIND THE <em>WORK</em></h2>
+    <div class="team-grid">
+      <div class="tc">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=85" alt="Felix"></div>
+        <div class="tc-amber-bar"></div>
+        <div class="tc-info">
+          <div class="tc-name">FELIX OKAFOR</div>
+          <div class="tc-role">Founder & Master Carpenter</div>
+          <div class="tc-bio">23 years experience · Fourth-generation craftsman · Specialist in fine joinery and furniture making</div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=85" alt="Marcus"></div>
+        <div class="tc-amber-bar"></div>
+        <div class="tc-info">
+          <div class="tc-name">MARCUS COLE</div>
+          <div class="tc-role">Senior Cabinetmaker</div>
+          <div class="tc-bio">19 years experience · Kitchen and bathroom specialist · Expert in timber veneering and inlay work</div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=85" alt="Dan"></div>
+        <div class="tc-amber-bar"></div>
+        <div class="tc-info">
+          <div class="tc-name">DAN WALSH</div>
+          <div class="tc-role">Structural Carpenter</div>
+          <div class="tc-bio">15 years experience · Framing, staircases and structural builds · Certified to commercial standard</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== REVIEWS =================== -->
+<section id="reviews" class="pg">
+
+  <div class="rev-head">
+    <div>
+      <div class="rev-label">Client Testimonials</div>
+      <h2 class="rev-htitle">WHAT OUR<br>CLIENTS <em>SAY</em></h2>
+    </div>
+    <div>
+      <p class="rev-body">23 years. 1,400+ projects. A thousand happy clients. Here is what a few of them had to say about working with Flexo Carpenter Inc.</p>
+    </div>
+  </div>
+
+  <div class="rating-showcase">
+    <div class="rs-big">
+      <div class="rs-num">4.9</div>
+      <div class="rs-stars">★★★★★</div>
+      <div class="rs-lbl">Average Rating</div>
+    </div>
+    <div class="rs-div"></div>
+    <div class="rs-bars">
+      <div class="rs-row"><span class="rs-rl">5 ★</span><div class="rs-track"><div class="rs-fill" style="width:92%"></div></div><span class="rs-pct">92%</span></div>
+      <div class="rs-row"><span class="rs-rl">4 ★</span><div class="rs-track"><div class="rs-fill" style="width:6%"></div></div><span class="rs-pct">6%</span></div>
+      <div class="rs-row"><span class="rs-rl">3 ★</span><div class="rs-track"><div class="rs-fill" style="width:1%"></div></div><span class="rs-pct">1%</span></div>
+      <div class="rs-row"><span class="rs-rl">2 ★</span><div class="rs-track"><div class="rs-fill" style="width:1%"></div></div><span class="rs-pct">1%</span></div>
+      <div class="rs-row"><span class="rs-rl">1 ★</span><div class="rs-track"><div class="rs-fill" style="width:0%"></div></div><span class="rs-pct">0%</span></div>
+    </div>
+    <div class="rs-div"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--font-d);font-size:64px;color:var(--amber);line-height:1;">1,400+</div>
+      <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--steel);margin-top:6px;">Completed Projects</div>
+    </div>
+  </div>
+
+  <div class="rev-grid">
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">Felix and his team built our entire kitchen — custom cabinetry, island, shelving, the lot. The quality is jaw-dropping. Seven years later it still looks showroom-new. Worth every single cent.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80" alt=""><div><div class="rc-name">Patricia Moore</div><div class="rc-loc">Philadelphia, PA</div><div class="rc-proj">Kitchen Fitout — Full Project</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">We commissioned a custom walnut dining table for 14. Delivered early, perfectly finished, more beautiful than the drawings. Flexo is simply on another level from any other tradespeople we've used.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt=""><div><div class="rc-name">James Hargrove</div><div class="rc-loc">New York, NY</div><div class="rc-proj">Custom Walnut Dining Table</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">We've used Flexo for flooring, wardrobes and our deck. Each time: exceptional quality, transparent pricing and on-time delivery. They are genuinely our go-to for life. The deck alone is worth visiting.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt=""><div><div class="rc-name">Sarah Billings</div><div class="rc-loc">Boston, MA</div><div class="rc-proj">Flooring, Wardrobes & Deck</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">As an interior designer I work with many carpenters. Flexo operates at a completely different standard — technically precise, creatively engaged, immaculately clean. The staircase they made is a showpiece.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80" alt=""><div><div class="rc-name">Diana Cho</div><div class="rc-loc">Interior Designer, Chicago</div><div class="rc-proj">Custom Timber Staircase</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">The restoration of my 1920s oak floors was miraculous. I assumed they needed replacing. Flexo brought them back to life — genuinely better than when they were first installed. Incredible craftsmanship.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&q=80" alt=""><div><div class="rc-name">Robert Bell</div><div class="rc-loc">Washington, DC</div><div class="rc-proj">Heritage Floor Restoration</div></div></div>
+    </div>
+    <div class="rc">
+      <div class="rc-q">"</div>
+      <p class="rc-text">Built-in bookshelves across a 20-foot wall. Every shelf level, every gap identical, every finish flawless. Our library is now the most-photographed room in the house. Dan and the team are artists.</p>
+      <div class="rc-stars">★★★★★</div>
+      <div class="rc-author"><img class="rc-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt=""><div><div class="rc-name">Michael Tan</div><div class="rc-loc">Austin, TX</div><div class="rc-proj">Library Wall — Built-In Shelving</div></div></div>
+    </div>
+  </div>
+
+  <div class="ba-section">
+    <div class="ba-label">Project Transformations</div>
+    <h2 class="ba-title">BEFORE &<br><em>AFTER</em></h2>
+    <p class="ba-sub">The proof is in the finished work. See how we transform raw timber and tired spaces.</p>
+    <div class="ba-grid">
+      <div class="ba-card" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=85" alt="">
+        <div class="ba-tag">After</div>
+        <div class="ba-info"><div class="ba-info-name">Kitchen Renovation</div><div class="ba-info-desc">Oak & Marble — Full fitout from raw space</div></div>
+      </div>
+      <div class="ba-card" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=700&q=85" alt="">
+        <div class="ba-tag">After</div>
+        <div class="ba-info"><div class="ba-info-name">Living Room Shelving</div><div class="ba-info-desc">Floating shelves & media unit — blank walls to showpiece</div></div>
+      </div>
+      <div class="ba-card" onclick="openLB(this)">
+        <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=700&q=85" alt="">
+        <div class="ba-tag">After</div>
+        <div class="ba-info"><div class="ba-info-name">Herringbone Flooring</div><div class="ba-info-desc">Full hallway — concrete subfloor to luxury oak finish</div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section id="contact" class="pg">
+
+  <div class="contact-hero">
+    <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=1800&q=85" alt="Workshop">
+    <div class="contact-hero-txt">
+      <h1>GET IN<br><span>TOUCH</span></h1>
+      <p>Tell us about your project. We'll respond within 24 hours with a detailed, no-obligation quote.</p>
+    </div>
+  </div>
+
+  <div class="contact-split">
+    <div class="contact-info">
+      <div class="ci-label">Contact Info</div>
+      <h2 class="ci-title">VISIT OUR<br><em>WORKSHOP</em></h2>
+      <p class="ci-body">We welcome clients to visit our workshop, browse timber samples and see work in progress. Please call ahead to book a time.</p>
+      <div class="ci-items">
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="ci-lbl">Workshop Address</div><div class="ci-val">44 Industrial Way, Unit 7<br>Philadelphia, Pennsylvania 19103</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.63A2 2 0 013.58 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="ci-lbl">Phone</div><div class="ci-val">+1 (215) 555-0381<br>Mon–Fri 7am–5pm · Sat 8am–12pm</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="ci-lbl">Email</div><div class="ci-val">hello@flexocarpenter.com<br>quotes@flexocarpenter.com</div></div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="ci-lbl">Workshop Hours</div><div class="ci-val">Mon – Fri: 7:00am – 5:00pm<br>Saturday: 8:00am – 12:00pm</div></div>
+        </div>
+      </div>
+      <div class="ci-imgs">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=300&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=300&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=300&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=300&q=80" alt="">
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="cf-title">REQUEST A QUOTE</div>
+      <p class="cf-sub">Fill in the details below and one of our senior craftsmen will contact you within one business day with a detailed, obligation-free quote.</p>
+      <div class="f-row">
+        <div class="f-grp"><label class="f-lbl">First Name</label><input type="text" class="f-in" id="fname" placeholder="Your first name"></div>
+        <div class="f-grp"><label class="f-lbl">Last Name</label><input type="text" class="f-in" id="lname" placeholder="Your last name"></div>
+      </div>
+      <div class="f-grp"><label class="f-lbl">Email Address</label><input type="email" class="f-in" id="email" placeholder="you@email.com"></div>
+      <div class="f-grp"><label class="f-lbl">Phone Number</label><input type="tel" class="f-in" id="phone" placeholder="+1 (000) 000-0000"></div>
+      <div class="f-grp">
+        <label class="f-lbl">Service Required</label>
+        <select class="f-sel" id="service">
+          <option value="">Select a service...</option>
+          <option>Custom Cabinetry</option>
+          <option>Bespoke Furniture</option>
+          <option>Hardwood Flooring</option>
+          <option>Decking & Outdoor</option>
+          <option>Stairs & Joinery</option>
+          <option>Structural Framing</option>
+          <option>Restoration & Repair</option>
+          <option>Full Home Fitout</option>
+        </select>
+      </div>
+      <div class="f-grp">
+        <label class="f-lbl">Timber Preference</label>
+        <select class="f-sel" id="timber">
+          <option value="">Preferred timber species...</option>
+          <option>Oak (White or Red)</option>
+          <option>Walnut</option>
+          <option>Maple</option>
+          <option>Pine</option>
+          <option>Cedar</option>
+          <option>Blackwood</option>
+          <option>Not Sure — Need Advice</option>
+        </select>
+      </div>
+      <div class="f-grp"><label class="f-lbl">Project Description</label><textarea class="f-ta" id="message" placeholder="Describe your project — dimensions, style, timber preference, budget and timeline..."></textarea></div>
+      <button class="sub-btn" onclick="submitForm()"><span>SEND QUOTE REQUEST →</span></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="fb-logo">
+      <span class="name">FLEXO</span>
+      <span class="tag">Carpenter Inc · Est. 2001</span>
+      <p>Master carpenters and joiners delivering precision woodwork to residential and commercial clients since 2001. Built by hand. Built to last.</p>
+      <div class="ft-socials">
+        <a class="ft-soc">fb</a><a class="ft-soc">ig</a><a class="ft-soc">yt</a><a class="ft-soc">pi</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a onclick="goTo('home')">Home</a></li>
+        <li><a onclick="goTo('services')">Services</a></li>
+        <li><a onclick="goTo('gallery')">Our Work</a></li>
+        <li><a onclick="goTo('about')">About Us</a></li>
+        <li><a onclick="goTo('reviews')">Reviews</a></li>
+        <li><a onclick="goTo('contact')">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a>Custom Cabinetry</a></li>
+        <li><a>Bespoke Furniture</a></li>
+        <li><a>Hardwood Flooring</a></li>
+        <li><a>Decking & Outdoor</a></li>
+        <li><a>Stairs & Joinery</a></li>
+        <li><a>Restoration</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a>44 Industrial Way, Unit 7</a></li>
+        <li><a>Philadelphia, PA 19103</a></li>
+        <li><a>+1 (215) 555-0381</a></li>
+        <li><a>hello@flexocarpenter.com</a></li>
+        <li><a>Mon–Fri: 7am – 5pm</a></li>
+        <li><a>Saturday: 8am – 12pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <span class="ft-copy">© 2025 Flexo Carpenter Inc. All rights reserved.</span>
+    <span class="ft-copy">Precision · Wood · Legacy</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <span class="lb-x">×</span>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-nav" onclick="event.stopPropagation()">
+    <button class="lb-btn" onclick="lbPrev()">← PREV</button>
+    <button class="lb-btn" onclick="lbNext()">NEXT →</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">◆ Quote request sent! We'll be in touch within 24 hours.</div>
+
+<script>
+function goTo(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function navToggle(){const ul=document.querySelector('.n-links');if(ul.style.display==='flex'){ul.style.display='none';}else{ul.style.cssText='display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(13,13,13,0.99);padding:20px 28px;gap:14px;border-bottom:2px solid var(--amber);z-index:999;';}}
+function filtGal(btn,cat){document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.gi').forEach(item=>{item.style.display=(cat==='all'||item.dataset.cat===cat)?'block':'none';});}
+let lbImgs=[],lbIdx=0;
+function openLB(el){lbImgs=[...document.querySelectorAll('.gi:not([style*="none"]) img,.wc img,.ba-card img')];const img=el.querySelector('img');lbIdx=lbImgs.indexOf(img);if(lbIdx===-1){lbImgs=[img];lbIdx=0;}document.getElementById('lbImg').src=img.src.replace(/w=\d+/,'w=1400');document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function lbNext(){lbIdx=(lbIdx+1)%lbImgs.length;document.getElementById('lbImg').src=lbImgs[lbIdx].src.replace(/w=\d+/,'w=1400');}
+function lbPrev(){lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length;document.getElementById('lbImg').src=lbImgs[lbIdx].src.replace(/w=\d+/,'w=1400');}
+document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='ArrowRight')lbNext();if(e.key==='ArrowLeft')lbPrev();if(e.key==='Escape')closeLB();}});
+function submitForm(){const fn=document.getElementById('fname').value.trim();const em=document.getElementById('email').value.trim();if(!fn||!em){alert('Please enter your name and email address.');return;}const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4500);['fname','lname','email','phone','service','timber','message'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});}
+</script>
+</body>
+</html>
